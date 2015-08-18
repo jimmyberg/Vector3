@@ -18,6 +18,7 @@ public:
 	Vector3& operator/=(const Vector3& right);
 
 	void normilize();
+	float absolute();
 private:
 
 };

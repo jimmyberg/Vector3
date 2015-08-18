@@ -56,3 +56,6 @@ void Vector3::normilize(){
 	y /= lenght;
 	z /= lenght;
 }
+float absolute(){
+	return sqrt(pow(x,2) + pow(y,2) + pow(z,2));
+}
