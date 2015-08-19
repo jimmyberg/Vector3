@@ -56,6 +56,15 @@ void Vector3::normilize(){
 	y /= lenght;
 	z /= lenght;
 }
-float absolute(){
+float absolute() const{
 	return sqrt(pow(x,2) + pow(y,2) + pow(z,2));
+}
+static float dotProduct(Vector3 &left, Vector3 &right){
+	return left.x * right.x + left.y * right.y + left.z * right.z;
+}
+static Vector3 crossProduct(Vector3 &left, Vector3 &right){
+	return Vector3(
+		left.y*right.z - left.z*right.y ,
+		left.z*right.x - left.x*right.z ,
+		left.x*right.y - left.y*right.x );
 }
