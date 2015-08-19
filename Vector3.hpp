@@ -13,14 +13,14 @@ public:
 	float x,y,z;
 
 	//operators
-	const Vector3 operator+(const Vector3& right) const;
-	const Vector3 operator-(const Vector3& right) const;
-	const Vector3 operator*(const Vector3& right) const;
-	const Vector3 operator/(const Vector3& right) const;
-	Vector3& operator+=(const Vector3& right);
-	Vector3& operator-=(const Vector3& right);
-	Vector3& operator*=(const Vector3& right);
-	Vector3& operator/=(const Vector3& right);
+	Vector3 operator+(const Vector3 &right) const;
+	Vector3 operator-(const Vector3 &right) const;
+	Vector3 operator*(const Vector3 &right) const;
+	Vector3 operator/(const Vector3 &right) const;
+	Vector3& operator+=(const Vector3 &right);
+	Vector3& operator-=(const Vector3 &right);
+	Vector3& operator*=(const Vector3 &right);
+	Vector3& operator/=(const Vector3 &right);
 
 	//fucntions
 	void normilize();
