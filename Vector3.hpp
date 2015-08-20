@@ -25,8 +25,8 @@ public:
 	//fucntions
 	void normilize();
 	float absolute() const;
-	static float dotProduct(Vector3 &left, Vector3 &right);
-	static Vector3 crossProduct(Vector3 &left, Vector3 &right);
+	static float dotProduct(const Vector3 &left, const Vector3 &right);
+	static Vector3 crossProduct(const Vector3 &left, const Vector3 &right);
 };
 
 #endif
