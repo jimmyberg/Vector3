@@ -61,7 +61,7 @@ Vector3 Vector3::normalized() const{
 	return Vector3(
 		x / lenght,
 		y / lenght,
-		z / lenght)
+		z / lenght);
 }
 float Vector3::absolute() const{
 	return sqrt(pow(x,2) + pow(y,2) + pow(z,2));
