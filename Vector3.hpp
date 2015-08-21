@@ -23,7 +23,8 @@ public:
 	Vector3& operator/=(const Vector3 &right);
 
 	//fucntions
-	void normilize();
+	void normalize();
+	Vector3 normalized() const;
 	float absolute() const;
 	static float dotProduct(const Vector3 &left, const Vector3 &right);
 	static Vector3 crossProduct(const Vector3 &left, const Vector3 &right);

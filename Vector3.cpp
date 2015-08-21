@@ -50,11 +50,18 @@ Vector3& Vector3::operator/=(const Vector3 &right){
 	z /= right.z;
 	return *this;
 }
-void Vector3::normilize(){
+void Vector3::normalize(){
 	float lenght = sqrt(pow(x,2) + pow(y,2) + pow(z,2));
 	x /= lenght;
 	y /= lenght;
 	z /= lenght;
+}
+Vector3 Vector3::normalized() const{
+	float lenght = sqrt(pow(x,2) + pow(y,2) + pow(z,2));
+	return Vector3(
+		x / lenght,
+		y / lenght,
+		z / lenght)
 }
 float Vector3::absolute() const{
 	return sqrt(pow(x,2) + pow(y,2) + pow(z,2));
