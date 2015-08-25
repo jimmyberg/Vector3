@@ -27,7 +27,7 @@ int main(void){
 	return 1;
 }
 ```
-**outuput**
+**output**
 ```
 testVector1 = {1,2,3}
 testVector2 = {3,2,1}
