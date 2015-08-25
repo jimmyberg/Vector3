@@ -2,6 +2,9 @@
 #ifndef _Vector3_h_
 #define _Vector3_h_
 
+#include <iostream>
+#include <math.h>
+
 class Vector3{
 public:
 	//constructors
@@ -29,5 +32,7 @@ public:
 	static float dotProduct(const Vector3 &left, const Vector3 &right);
 	static Vector3 crossProduct(const Vector3 &left, const Vector3 &right);
 };
+
+std::ostream& operator<<(std::ostream& os, const Vector3& vector3);
 
 #endif

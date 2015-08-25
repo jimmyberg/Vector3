@@ -1,6 +1,5 @@
 
 #include "Vector3.hpp"
-#include <math.h>
 
 Vector3::Vector3(float ix, float iy, float iz): x(ix), y(iy), z(iz){}
 Vector3::Vector3(float ia): x(ia), y(ia), z(ia){}
@@ -74,4 +73,9 @@ Vector3 Vector3::crossProduct(const Vector3 &left, const Vector3 &right){
 		left.y*right.z - left.z*right.y ,
 		left.z*right.x - left.x*right.z ,
 		left.x*right.y - left.y*right.x );
+}
+
+std::ostream& operator<<(std::ostream& os, const Vector3& vector3){
+    os << '{' << vector3.x << ',' << vector3.y << ',' << vector3.z << '}';
+    return os;
 }
