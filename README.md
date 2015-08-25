@@ -6,7 +6,7 @@ c++ library for 3 dimensional vector calculations
 
 ## Example
 
-**test.cpp**
+**main.cpp**
 ```c++
 #include <iostream>
 using namespace std;
