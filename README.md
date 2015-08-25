@@ -1,4 +1,4 @@
-# Vector3
+# 3d Vector calculation libary for c++
 Made by Jimmy van den Berg in The Netherlands
 18 August 2015
 
