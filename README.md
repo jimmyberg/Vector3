@@ -27,8 +27,9 @@ int main(void){
 	return 1;
 }
 ```
-output:
-```testVector1 = {1,2,3}
+**outuput**
+```
+testVector1 = {1,2,3}
 testVector2 = {3,2,1}
 testVector2 + testVector2 = {4,4,4}
 testVector2 - testVector2 = {-2,0,2}
