@@ -1,10 +1,6 @@
 
 #include "Vector3.hpp"
 
-Vector3::Vector3(float ix, float iy, float iz): x(ix), y(iy), z(iz){}
-Vector3::Vector3(float ia): x(ia), y(ia), z(ia){}
-Vector3::Vector3(): x(0), y(0), z(0){}
-
 Vector3 Vector3::operator+(const Vector3 &right) const{
 	Vector3 temp(*this);
 	temp += right;

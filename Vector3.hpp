@@ -8,9 +8,9 @@
 class Vector3{
 public:
 	//constructors
-	Vector3(float ix, float iy, float iz);
-	Vector3(float ia);
-	Vector3();
+	constexpr Vector3(float ix, float iy, float iz): x(ix), y(iy), z(iz){}
+	constexpr Vector3(float ia): x(ia), y(ia), z(ia){}
+	constexpr Vector3(): x(0), y(0), z(0){}
 
 	//variables
 	float x,y,z;
