@@ -29,6 +29,7 @@ public:
 	void normalize();
 	Vector3 normalized() const;
 	float absolute() const;
+	bool isZero(){return x == 0 && y == 0 && z == 0;}
 	static float dotProduct(const Vector3 &left, const Vector3 &right);
 	static Vector3 crossProduct(const Vector3 &left, const Vector3 &right);
 };
