@@ -18,6 +18,7 @@ public:
 	//operators
 	Vector3 operator+(const Vector3 &right) const;
 	Vector3 operator-(const Vector3 &right) const;
+	Vector3 operator-() const{return Vector3(-x, -y, -z);};
 	Vector3 operator*(const Vector3 &right) const;
 	Vector3 operator/(const Vector3 &right) const;
 	Vector3& operator+=(const Vector3 &right);
