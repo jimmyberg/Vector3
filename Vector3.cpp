@@ -71,6 +71,16 @@ Vector3 Vector3::crossProduct(const Vector3 &left, const Vector3 &right){
 		left.x*right.y - left.y*right.x );
 }
 
+float Vector3::angleBetweenVectors(const Vector3& otherVector) const{
+	// Two vectors form a triangle with sides abs(v1), abs(v1) and abs(v1-v2).
+	// Apply good old geometry and you get this.
+	return acos(
+		dotProduct(*this, otherVector)
+		/
+		(absolute() * otherVector.absolute())
+		);
+}
+
 std::ostream& operator<<(std::ostream& os, const Vector3& vector3){
     os << '{' << vector3.x << ',' << vector3.y << ',' << vector3.z << '}';
     return os;

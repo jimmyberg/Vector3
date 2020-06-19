@@ -33,6 +33,7 @@ public:
 	bool isZero(){return x == 0 && y == 0 && z == 0;}
 	static float dotProduct(const Vector3 &left, const Vector3 &right);
 	static Vector3 crossProduct(const Vector3 &left, const Vector3 &right);
+	float angleBetweenVectors(const Vector3& otherVector) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Vector3& vector3);
