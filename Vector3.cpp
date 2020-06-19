@@ -46,20 +46,20 @@ Vector3& Vector3::operator/=(const Vector3 &right){
 	return *this;
 }
 void Vector3::normalize(){
-	float lenght = sqrt(pow(x,2) + pow(y,2) + pow(z,2));
-	x /= lenght;
-	y /= lenght;
-	z /= lenght;
+	*this = normalized();
 }
 Vector3 Vector3::normalized() const{
-	float lenght = sqrt(pow(x,2) + pow(y,2) + pow(z,2));
+	float lenghtInverse = 1/absolute();
 	return Vector3(
-		x / lenght,
-		y / lenght,
-		z / lenght);
+		x * lenghtInverse,
+		y * lenghtInverse,
+		z * lenghtInverse);
 }
 float Vector3::absolute() const{
-	return sqrt(pow(x,2) + pow(y,2) + pow(z,2));
+	return sqrt(absolute2());
+}
+float Vector3::absolute2() const{
+	return x*x + y*y + z*z;
 }
 float Vector3::dotProduct(const Vector3 &left, const Vector3 &right){
 	return left.x * right.x + left.y * right.y + left.z * right.z;
@@ -77,11 +77,11 @@ float Vector3::angleBetweenVectors(const Vector3& otherVector) const{
 	return acos(
 		dotProduct(*this, otherVector)
 		/
-		(absolute() * otherVector.absolute())
+		sqrt(absolute2() * otherVector.absolute2())
 		);
 }
 
 std::ostream& operator<<(std::ostream& os, const Vector3& vector3){
-    os << '{' << vector3.x << ',' << vector3.y << ',' << vector3.z << '}';
-    return os;
+	os << '{' << vector3.x << ',' << vector3.y << ',' << vector3.z << '}';
+	return os;
 }
