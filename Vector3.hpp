@@ -26,15 +26,23 @@ public:
 	Vector3& operator*=(const Vector3 &right);
 	Vector3& operator/=(const Vector3 &right);
 
-	//fucntions
+	//functions
 	void normalize();
 	Vector3 normalized() const;
 	float absolute() const;
 	float absolute2() const; // Squared variant
-	bool isZero(){return x == 0 && y == 0 && z == 0;}
+	bool isZero() const{return x == 0 && y == 0 && z == 0;}
 	static float dotProduct(const Vector3 &left, const Vector3 &right);
 	static Vector3 crossProduct(const Vector3 &left, const Vector3 &right);
 	float angleBetweenVectors(const Vector3& otherVector) const;
+	/**
+	 * @brief      Rotate this vector using another vector as rotation axis.
+	 *
+	 * @param[in]  v         Vector used as rotations axis. Needs to be
+	 *                       normalized
+	 * @param[in]  rotation  The rotation angle in radians.
+	 */
+	void rotateArroundVector(const Vector3& v, float rotation);
 };
 
 std::ostream& operator<<(std::ostream& os, const Vector3& vector3);

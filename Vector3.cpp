@@ -1,5 +1,6 @@
 
 #include "Vector3.hpp"
+#include "Quaternion.h"
 
 Vector3 Vector3::operator+(const Vector3 &right) const{
 	Vector3 temp(*this);
@@ -79,6 +80,12 @@ float Vector3::angleBetweenVectors(const Vector3& otherVector) const{
 		/
 		sqrt(absolute2() * otherVector.absolute2())
 		);
+}
+
+void Vector3::rotateArroundVector(const Vector3& v, float rotation){
+	const Quaternion rotationInQuaternionSpace(v, rotation);
+	// Apply rotation
+	*this = (rotationInQuaternionSpace * *this * rotationInQuaternionSpace.getConjugate()).toVector();
 }
 
 std::ostream& operator<<(std::ostream& os, const Vector3& vector3){
