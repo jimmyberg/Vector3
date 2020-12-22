@@ -75,7 +75,9 @@ public:
 	 * @return     The result of the multiplication of two Quaternions
 	 */
 	Quaternion operator*(const Quaternion& right) const;
+	Quaternion& operator*=(const Quaternion& right);
 	Quaternion operator*(const Vector3& right) const;
+	Quaternion operator*=(const Vector3& right);
 	friend std::ostream& operator<<(std::ostream& os, const Quaternion& q);
 	/**
 	 * @brief      Returns a vector representation of the object.
@@ -83,10 +85,37 @@ public:
 	 * @return     Vector representation of the object.
 	 */
 	Vector3 toVector(){return Vector3(i,j,k);}
-	float real;
-	float i;
-	float j;
-	float k;
+	/**
+	 * @brief      Gets the rotated x vector.
+	 *
+	 *             When quaternion is not rotated, this just returns
+	 *             Vector3(1,0,0)
+	 *
+	 * @return     The rotated x vector.
+	 */
+	Vector3 getRotatedXVector();
+	/**
+	 * @brief      Gets the rotated y vector.
+	 *
+	 *             When quaternion is not rotated, this just returns
+	 *             Vector3(0,1,0)
+	 *
+	 * @return     The rotated y vector.
+	 */
+	Vector3 getRotatedYVector();
+	/**
+	 * @brief      Gets the rotated z vector.
+	 *
+	 *             When quaternion is not rotated, this just returns
+	 *             Vector3(0,0,1)
+	 *
+	 * @return     The rotated z vector.
+	 */
+	Vector3 getRotatedZVector();
+	float real = 1;
+	float i = 0;
+	float j = 0;
+	float k = 0;
 private:
 };
 
