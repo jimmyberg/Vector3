@@ -27,16 +27,16 @@ public:
 		rotation /= 2;
 		real = cos(rotation);
 		float sinPart = sin(rotation);
-		i = sinPart * v.x;
-		j = sinPart * v.y;
-		k = sinPart * v.z;
+		i = sinPart * v.data[0];
+		j = sinPart * v.data[1];
+		k = sinPart * v.data[2];
 	}
 	/**
 	 * @brief      Constructs a vector in quaternion space
 	 *
 	 * @param[in]  v     The vector to transform
 	 */
-	Quaternion(const Vector3& v): real(0), i(v.x), j(v.y), k(v.z){}
+	Quaternion(const Vector3& v): real(0), i(v.data[0]), j(v.data[1]), k(v.data[2]){}
 	/**
 	 * @brief      Constructs directly a Quaternion.
 	 *

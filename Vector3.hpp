@@ -8,17 +8,23 @@
 class Vector3{
 public:
 	//constructors
-	constexpr Vector3(float ix, float iy, float iz): x(ix), y(iy), z(iz){}
-	constexpr Vector3(float ia): x(ia), y(ia), z(ia){}
-	constexpr Vector3(): x(0), y(0), z(0){}
+	constexpr Vector3(float ix, float iy, float iz): data{ix, iy, iz}{}
+	constexpr Vector3(float ia): data{ia, ia, ia}{}
+	constexpr Vector3(): data{0}{}
 
 	//variables
-	float x,y,z;
+	float data[3];
 
 	//operators
+	float operator[](unsigned int index) const{
+		return data[index];
+	}
+	float& operator[](unsigned int index){
+		return data[index];
+	}
 	Vector3 operator+(const Vector3 &right) const;
 	Vector3 operator-(const Vector3 &right) const;
-	Vector3 operator-() const{return Vector3(-x, -y, -z);};
+	Vector3 operator-() const{return Vector3(-data[0], -data[1], -data[2]);};
 	Vector3 operator*(const Vector3 &right) const;
 	Vector3 operator/(const Vector3 &right) const;
 	Vector3& operator+=(const Vector3 &right);
@@ -31,7 +37,7 @@ public:
 	Vector3 normalized() const;
 	float absolute() const;
 	float absolute2() const; // Squared variant
-	bool isZero() const{return x == 0 && y == 0 && z == 0;}
+	bool isZero() const{return data[0] == 0 && data[1] == 0 && data[2] == 0;}
 	static float dotProduct(const Vector3 &left, const Vector3 &right);
 	static Vector3 crossProduct(const Vector3 &left, const Vector3 &right);
 	float angleBetweenVectors(const Vector3& otherVector) const;
@@ -46,5 +52,6 @@ public:
 };
 
 std::ostream& operator<<(std::ostream& os, const Vector3& vector3);
+std::istream& operator>>(std::istream& is, Vector3& vector3);
 
 #endif

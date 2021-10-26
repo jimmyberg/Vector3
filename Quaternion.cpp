@@ -34,21 +34,21 @@ Quaternion& Quaternion::operator*=(const Quaternion& right){
 Quaternion Quaternion::operator*(const Vector3& right) const{
 	Quaternion ret;
 	ret.real =
-		-i    * right.x -
-		j    * right.y -
-		k    * right.z;
+		-i    * right.data[0] -
+		j    * right.data[1] -
+		k    * right.data[2];
 	ret.i =
-		real * right.x +
-		j    * right.z -
-		k    * right.y;
+		real * right.data[0] +
+		j    * right.data[2] -
+		k    * right.data[1];
 	ret.j =
-		real * right.y -
-		i    * right.z +
-		k    * right.x;
+		real * right.data[1] -
+		i    * right.data[2] +
+		k    * right.data[0];
 	ret.k =
-		real * right.z +
-		i    * right.y -
-		j    * right.x;
+		real * right.data[2] +
+		i    * right.data[1] -
+		j    * right.data[0];
 	return ret;
 }
 
